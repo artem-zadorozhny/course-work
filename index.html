@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Курсова робота з веб-технологій: огляд можливостей HTML5">
+<meta name="author" content="Студент групи ХХ-00">
+<title>Можливості HTML — курсова робота</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>HTML5: можливості мови розмітки</h1>
+  <p>Курсова робота з дисципліни «Веб-технології». Виконали: <strong>Задорожний Артем, Скрипник Ярослав, Набуральний Тимофій</strong>, група 2АКІТР-26Б.
+  Дата: <time datetime="2026-10-07">7 жовтня 2026</time>.</p>
+</header>
+
+<nav aria-label="Головне меню">
+  <ul>
+    <li><a href="#intro">Вступ</a></li>
+    <li><a href="#text">Текст</a></li>
+    <li><a href="#media">Мультимедіа</a></li>
+    <li><a href="#tables">Таблиці</a></li>
+    <li><a href="#forms">Форми</a></li>
+    <li><a href="#other">Інше</a></li>
+    <li><a href="#end">Висновки</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+<main>
+
+<section id="intro">
+  <h2>1. Вступ</h2>
+  <p><abbr title="HyperText Markup Language">HTML</abbr> — мова гіпертекстової розмітки, яка визначає
+  структуру веб-сторінки. Поточний стандарт — <mark>HTML5</mark>, який підтримується
+  організацією <a href="https://www.w3.org/" target="_blank" rel="noopener">W3C</a> та
+  <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener">WHATWG</a>.</p>
+  <p>Хімічна формула води: H<sub>2</sub>O. Площа квадрата: a<sup>2</sup>. <del>Застаріле</del> <ins>нове</ins>.</p>
+  <blockquote cite="https://www.w3.org/">
+    <p>Веб — це простір, у якому кожен може читати й писати.</p>
+    <footer>— ідея гіпертексту</footer>
+  </blockquote>
+</section>
+
+<section id="text">
+  <h2>2. Текст, списки та код</h2>
+  <h3>Заголовки, абзаци, форматування</h3>
+  <p><strong>Жирний</strong>, <em>курсив</em>, <u>підкреслений</u>, <s>закреслений</s>, <small>дрібний</small> текст.<br>
+  Це новий рядок після тегу <code>&lt;br&gt;</code>.</p>
+  <hr>
+  <h3>Списки</h3>
+  <ul>
+    <li>Маркований список
+      <ul><li>Вкладений пункт</li><li>Ще один</li></ul>
+    </li>
+    <li>Другий пункт</li>
+  </ul>
+  <ol type="1">
+    <li>Створити файл <code>index.html</code></li>
+    <li>Додати структуру документа</li>
+    <li>Підключити стилі</li>
+  </ol>
+  <dl>
+    <dt>DOM</dt><dd>Об’єктна модель документа.</dd>
+    <dt>Тег</dt><dd>Елемент розмітки в кутових дужках.</dd>
+  </dl>
+  <h3>Код</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+  &lt;head&gt;&lt;title&gt;Привіт&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;h1&gt;Привіт, світе!&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+
+<section id="media">
+  <h2>3. Зображення, відео, аудіо</h2>
+
+  <h3>Зображення з підписом</h3>
+  <figure>
+    <img alt="Схематичне зображення HTML-сторінки" width="400" height="200"
+      src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect width='400' height='200' fill='%230f6b5c'/%3E%3Crect x='20' y='20' width='360' height='30' fill='%23e0a526'/%3E%3Crect x='20' y='65' width='100' height='115' fill='%23ffffff' opacity='.8'/%3E%3Crect x='135' y='65' width='245' height='50' fill='%23ffffff' opacity='.8'/%3E%3Crect x='135' y='130' width='245' height='50' fill='%23ffffff' opacity='.5'/%3E%3C/svg%3E">
+    <figcaption>Рис. 1. Схема розмітки: шапка, меню, контент.</figcaption>
+  </figure>
+
+  <h3>Адаптивне зображення (<code>&lt;picture&gt;</code>)</h3>
+  <picture>
+    <source media="(min-width:600px)" srcset="https://via.placeholder.com/600x200/0f6b5c/ffffff?text=Desktop">
+    <img src="https://via.placeholder.com/300x200/e0a526/1c2b27?text=Mobile" alt="Зображення, що змінюється залежно від ширини екрана">
+  </picture>
+
+  <h3>Карта зображення (<code>&lt;map&gt;</code>)</h3>
+  <img usemap="#shapes" alt="Дві фігури: коло та квадрат" width="240" height="100"
+    src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230f6b5c'/%3E%3Crect x='140' y='10' width='80' height='80' fill='%23e0a526'/%3E%3C/svg%3E">
+  <map name="shapes">
+    <area shape="circle" coords="50,50,40" href="#text" alt="Перейти до тексту">
+    <area shape="rect" coords="140,10,220,90" href="#tables" alt="Перейти до таблиць">
+  </map>
+
+  <h3>Відео</h3>
+<video controls width="480">
+  <source src="video/demo.mp4" type="video/mp4">
+  Ваш браузер не підтримує елемент video.
+</video>
+
+  <h3>Аудіо</h3>
+  <audio controls>
+    <source src="sound/dominate.mp3" type="audio/mpeg">
+    Ваш браузер не підтримує елемент audio.
+  </audio>
+
+  <h3>Вбудована сторінка (<code>&lt;iframe&gt;</code>)</h3>
+  <iframe title="Карта Вінниці" width="100%" height="250" loading="lazy"
+  src="https://www.openstreetmap.org/export/embed.html?bbox=28.38,49.19,28.55,49.28&amp;layer=mapnik&amp;marker=49.2331,28.4682">
+  </iframe>
+</section>
+
+<section id="tables">
+  <h2>4. Таблиці</h2>
+  <table>
+    <caption>Таблиця 1. Порівняння версій HTML</caption>
+    <thead>
+      <tr><th rowspan="2">Версія</th><th rowspan="2">Рік</th><th colspan="2">Нововведення</th></tr>
+      <tr><th>Структура</th><th>Мультимедіа</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>HTML 4.01</td><td>1999</td><td>Фрейми, таблиці</td><td>Лише <code>&lt;object&gt;</code></td></tr>
+      <tr><td>XHTML 1.0</td><td>2000</td><td>Строгий синтаксис XML</td><td>—</td></tr>
+      <tr><td>HTML5</td><td>2014</td><td>header, nav, section, article</td><td>video, audio, canvas</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><td colspan="4">Усього версій у таблиці: 3</td></tr>
+    </tfoot>
+  </table>
+</section>
+
+<section id="forms">
+  <h2>5. Форми</h2>
+  <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Особисті дані</legend>
+      <label for="name">Ім’я *</label>
+      <input type="text" id="name" name="name" required minlength="2" placeholder="Іван Петренко" autocomplete="name">
+      <label for="email">Електронна пошта *</label>
+      <input type="email" id="email" name="email" required placeholder="name@example.com">
+      <label for="pass">Пароль (мін. 8 символів)</label>
+      <input type="password" id="pass" name="pass" minlength="8">
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" pattern="\+380[0-9]{9}" placeholder="+380XXXXXXXXX" title="Формат: +380XXXXXXXXX">
+      <label for="bd">Дата народження</label>
+      <input type="date" id="bd" name="bd">
+      <label for="site">Особистий сайт</label>
+      <input type="url" id="site" name="site" placeholder="https://">
+    </fieldset>
+
+    <fieldset>
+      <legend>Вподобання</legend>
+      <p class="inline">Стать:
+        <input type="radio" id="m" name="g" value="m"><label for="m">чоловіча</label>
+        <input type="radio" id="f" name="g" value="f"><label for="f">жіноча</label>
+        <input type="radio" id="o" name="g" value="o" checked><label for="o">не вказувати</label>
+      </p>
+      <p class="inline">Цікавить:
+        <input type="checkbox" id="c1" name="i" value="html" checked><label for="c1">HTML</label>
+        <input type="checkbox" id="c2" name="i" value="css"><label for="c2">CSS</label>
+        <input type="checkbox" id="c3" name="i" value="js"><label for="c3">JavaScript</label>
+      </p>
+      <label for="city">Місто</label>
+      <input list="cities" id="city" name="city" placeholder="Почніть вводити">
+      <datalist id="cities"><option value="Київ"><option value="Львів"><option value="Одеса"><option value="Харків"><option value="Дніпро"></datalist>
+      <label for="level">Рівень знань</label>
+      <select id="level" name="level">
+        <optgroup label="Початковий"><option>Новачок</option></optgroup>
+        <optgroup label="Просунутий"><option selected>Середній</option><option>Високий</option></optgroup>
+      </select>
+      <label for="rate">Оцінка сайту: <output id="out">5</output>/10</label>
+      <input type="range" id="rate" name="rate" min="0" max="10" value="5" oninput="out.value=this.value">
+      <label for="qty">Кількість</label>
+      <input type="number" id="qty" name="qty" min="1" max="20" value="1">
+      <label for="color">Улюблений колір</label>
+      <input type="color" id="color" name="color" value="#0f6b5c">
+      <label for="file">Файл</label>
+      <input type="file" id="file" name="file">
+      <label for="msg">Повідомлення</label>
+      <textarea id="msg" name="msg" rows="4" placeholder="Ваш відгук…"></textarea>
+    </fieldset>
+
+    <p class="inline"><input type="checkbox" id="agree" required><label for="agree">Погоджуюсь з обробкою даних *</label></p>
+    <button type="submit">Надіслати</button>
+    <button type="reset">Очистити</button>
+  </form>
+
+  <h3>Прогрес і шкала</h3>
+  <label for="pr">Виконання курсової:</label>
+  <progress id="pr" value="70" max="100">70%</progress>
+  <label for="mt">Заряд батареї:</label>
+  <meter id="mt" min="0" max="100" low="25" high="75" optimum="90" value="60">60%</meter>
+</section>
+
+<section id="other">
+  <h2>6. Інші можливості HTML5</h2>
+  <details open>
+    <summary>Що таке семантична розмітка?</summary>
+    <p>Це використання тегів за їхнім змістом (<code>header</code>, <code>nav</code>, <code>main</code>,
+    <code>article</code>, <code>footer</code>), що допомагає пошуковим системам і людям з екранними читачами.</p>
+  </details>
+  <details>
+    <summary>Що таке Canvas?</summary>
+    <p>Елемент для малювання графіки за допомогою JavaScript. Приклад нижче.</p>
+  </details>
+
+  <h3>Canvas</h3>
+  <canvas id="cv" width="300" height="120">Canvas не підтримується.</canvas>
+  <script>
+    const c=document.getElementById('cv').getContext('2d');
+    c.fillStyle='#0f6b5c';c.fillRect(10,10,120,100);
+    c.fillStyle='#e0a526';c.beginPath();c.arc(210,60,48,0,Math.PI*2);c.fill();
+    c.fillStyle='#fff';c.font='16px sans-serif';c.fillText('HTML5',45,65);
+  </script>
+
+  <h3>Вбудований SVG</h3>
+  <svg width="220" height="90" viewBox="0 0 220 90" role="img" aria-label="Зірка та лінія">
+    <polygon points="45,8 56,36 86,36 62,54 71,82 45,65 19,82 28,54 4,36 34,36" fill="#e0a526" stroke="#0f6b5c" stroke-width="3"/>
+    <line x1="110" y1="45" x2="210" y2="45" stroke="#0f6b5c" stroke-width="4"/>
+  </svg>
+
+  <h3>Інтерактивні елементи</h3>
+  <p>Скорочення: <kbd>Ctrl</kbd> + <kbd>S</kbd> — зберегти. Змінна <var>x</var> = 5. Результат: <samp>OK</samp>.</p>
+  <p>Посилання на файл: <a href="index.html" download>завантажити цю сторінку</a>.
+  </p>
+</section>
+
+<section id="end">
+  <h2>7. Висновки</h2>
+  <p>У роботі розглянуто основні можливості HTML5: семантичну структуру, роботу з текстом, таблицями,
+  формами та мультимедіа. Мова розмітки разом із CSS та JavaScript становить основу сучасних веб-технологій.</p>
+  <h3>Список літератури</h3>
+  <ol>
+    <li>HTML Living Standard. WHATWG. — <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener">html.spec.whatwg.org</a></li>
+    <li>MDN Web Docs: HTML. — <a href="https://developer.mozilla.org/uk/docs/Web/HTML" target="_blank" rel="noopener">developer.mozilla.org</a></li>
+  </ol>
+</section>
+
+</main>
+
+<aside>
+  <div>
+    <h2>Зміст</h2>
+    <ol>
+      <li><a href="#intro">Вступ</a></li>
+      <li><a href="#text">Текст</a></li>
+      <li><a href="#media">Мультимедіа</a></li>
+      <li><a href="#tables">Таблиці</a></li>
+      <li><a href="#forms">Форми</a></li>
+      <li><a href="#other">Інше</a></li>
+      <li><a href="#end">Висновки</a></li>
+    </ol>
+  </div>
+  <div>
+    <h2>Про авторів</h2>
+    <address>Задорожний Артем, Скрипник Ярослав, Набуральний Тимофій<br>Група 2АКІТР-26Б<br><a href="mailto:student@example.com">student@example.com</a></address>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p>&copy; 2026 Курсова робота з веб-технологій. <a href="#top">Нагору ↑</a></p>
+</footer>
+
+</body>
+</html>
