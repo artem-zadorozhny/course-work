@@ -37,3 +37,18 @@ summary{cursor:pointer;font-weight:bold}
 footer{background:#0a4a40;color:#fff;text-align:center;padding:1.5rem 1rem}
 footer a{color:var(--accent2)}
 a{color:var(--accent)}
+
+/* Каталог і бронювання */
+[hidden]{display:none!important}
+.auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.filters{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+@media(max-width:760px){.auth-grid,.filters{grid-template-columns:1fr}}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1rem 0}
+.book-card{border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;background:#fbfdfc}
+.book-card h3{margin:.2rem 0;color:var(--accent)}
+.badge{background:var(--accent2);padding:.1rem .5rem;border-radius:10px;font-size:.8rem;white-space:nowrap}
+button:disabled{background:#9aa;cursor:not-allowed}
+.msg{padding:.5rem .8rem;border-radius:4px;min-height:1.2rem}
+.msg.ok{background:#e1f3e8}
+.msg.err{background:#fde4e1}
+.hint{font-size:.9rem;color:#566}
