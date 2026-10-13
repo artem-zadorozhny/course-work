@@ -1,4 +1,3 @@
-/* «База даних» бібліотеки на localStorage: книги, користувачі, бронювання */
 (function () {
   const K = { books: 'lib_books', users: 'lib_users', loans: 'lib_loans', ses: 'lib_session' };
 
