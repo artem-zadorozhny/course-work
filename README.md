@@ -1,1 +1,1 @@
-# course-work Artem,Yarik,Tymophiy
+# course-work Artem,Yarik,Tymophiy 2AKITR-26Б WEB technology
