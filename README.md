@@ -1,1 +1,1 @@
-# course-work
+# course-work Artem,Yarik,Tymophiy
