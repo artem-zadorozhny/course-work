@@ -18,7 +18,15 @@ body {
   color: var(--ink);
   background: var(--bg);
 }
-h1,h2,h3,nav,th,label,button,legend,summary {
+h1,
+h2,
+h3,
+nav,
+th,
+label,
+button,
+legend,
+summary {
   font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 header {
